@@ -34,7 +34,7 @@ def main():
     acciones.ingresarSpotify()
     time.sleep(3)
     acciones.maximizar()
-    time.sleep(20)
+    time.sleep(220)
 
 
     """
