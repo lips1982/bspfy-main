@@ -18,19 +18,29 @@ def main():
 
 
     #--> Descomentar para ver en PC
-    #display = Display(visible=True, size=(1200,768))
+    display = Display(visible=True, size=(1200,768))
 
-    display = Display(visible=True, size=(1900,1268), backend="xvfb", use_xauth=True)
+    #display = Display(visible=True, size=(1900,1268), backend="xvfb", use_xauth=True)
 
     display.start()
 
     #--> Descomentar para ver en PC
-    #pyautogui._pyautogui_x11._display = Xlib.display.Display(":0")
+    pyautogui._pyautogui_x11._display = Xlib.display.Display(":0")
 
-    pyautogui._pyautogui_x11._display = Xlib.display.Display(os.environ['DISPLAY'])
+    #pyautogui._pyautogui_x11._display = Xlib.display.Display(os.environ['DISPLAY'])
+    
+    driver = BaseConexion().conexionChrome()
+    acciones = Acciones(driver)
+    acciones.ingresarSpotify()
+    time.sleep(3)
+    acciones.maximizar()
+    time.sleep(20)
+
+
+    """
     hilos=1
     inicio= time.time()
-
+    */
     db=MongoDB(hilos)
     db.iniciarDB()
     email=[]
@@ -172,19 +182,19 @@ def main():
         enviaremailerror(f'Error en 9 : {email}',errors,"Error 9", "PASSWORD FAIL")           
         #error= "error.txt"
         #enviaremailerror(email,error)
-
+"""
 
      
     display.stop()
 
 if __name__ == '__main__':
-    try:
-        main()
-    except Exception as e:
+    "try:"
+    main()
+    """except Exception as e:
         with open(os.path.join(pathImg,f"logerror.txt"), 'w') as f:
             f.write(str(e))
         error= "logerror.txt"
-
+"""
 
 
 
