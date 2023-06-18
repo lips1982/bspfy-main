@@ -25,8 +25,8 @@ echo "$PUBLIC_IP"
 sed -i "s|REEMPLAZARPUBLICIP|${PUBLIC_IP}|g" botSpotifyV1/mainNeverInstall.py
 sudo apt-get -y install screen
 
-docker build -t display .
+docker build -t display . 
 
 
-screen -S docker -d -m bash -c "docker run -it --rm -v $PWD/img:/app/Almacenamiento/img display"
+screen -S docker -d -m bash -c "docker run -it --rm -v $PWD/img:/app/Almacenamiento/img display bash" 
 #docker logs -f 

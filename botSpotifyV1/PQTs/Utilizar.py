@@ -38,7 +38,7 @@ urlNeverInstall='https://neverinstall.com/signin'
 #-----------------#
 
 urlSpotify = 'https://www.spotify.com/'
-urlSpotifysinginUS = "https://accounts.spotify.com/en/login/?continue=https%3A//open.spotify.com/__noul__%3Fl2l%3D1%26nd%3D1&_locale=en-US"
+urlSpotifysinginUS = "https://open.spotify.com"
 
 urlSpotifyLogin = 'https://accounts.spotify.com/'
 

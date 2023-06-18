@@ -31,12 +31,15 @@ class BaseConexion():
         self.options.add_argument('--ignore-certificate-errors')  
         self.options.add_argument('--start-maximized')
         self.options.add_argument('--disable-dev-shm-usage')    
-        self.options.add_argument('--disable-infobars')    
+        self.options.add_argument('--disable-infobars')  
+        #self.options.add_argument('--user-data-dir=/app/opt/data-dir')     
+        self.options.add_argument('--user-data-dir=./data-dir')
         #self.options.add_argument("--incognito")   
         self.options.add_argument('--disable-gpu')
         self.options.add_experimental_option("excludeSwitches", ["enable-logging","enable-automation"])
         prefs = {"credentials_enable_service": False,"profile.password_manager_enabled": False}
         self.options.add_experimental_option("prefs", prefs)
+        
         
     def conexionChromeHeadless(self) :
         self.options.add_argument("--headless")

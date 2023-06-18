@@ -16,26 +16,35 @@ from datetime import datetime
 
 def main():
 
-
     #--> Descomentar para ver en PC
     display = Display(visible=True, size=(1200,768))
 
     #display = Display(visible=True, size=(1900,1268), backend="xvfb", use_xauth=True)
 
     display.start()
-
+    print ("Display Iniciado")
     #--> Descomentar para ver en PC
+    
     pyautogui._pyautogui_x11._display = Xlib.display.Display(":0")
 
-    #pyautogui._pyautogui_x11._display = Xlib.display.Display(os.environ['DISPLAY'])
+    #pyautogui._pyautogui_x11._display = Xlib.display.Display(os.environ["DISPLAY"])
+    time.sleep(5)
     
-    driver = BaseConexion().conexionChrome()
-    acciones = Acciones(driver)
-    acciones.ingresarSpotify()
-    time.sleep(3)
-    acciones.maximizar()
-    time.sleep(220)
+    try: 
+        driver = BaseConexion().conexionChrome()
 
+        print ("Driver iniciado")
+        acciones = Acciones(driver)
+        time.sleep(15)
+        acciones.ingresarSpotify()
+        time.sleep(3)
+        print ("Tomando capture")
+        #pyautogui.screenshot(os.path.join(pathImg,f"{datetime.today().strftime('%Y-%m-%d %H:%M')}.png"))
+        acciones.maximizar()
+        time.sleep(64000)        
+    except Exception as e:
+        print(f"{e}")
+    print ("Esperando 10 seg")
 
     """
     hilos=1

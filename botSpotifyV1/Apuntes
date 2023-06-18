@@ -21,3 +21,10 @@ sudo rm -r bs00PAIS/ && git clone https://github.com/lips1982/bs00PAIS.git && ch
 #CAMBIAR EL NOMBRE DEL ARCHIVO A mainNeverInstall.py
 
 mainNeverInstall.py
+
+#CREAR CARPETA DE GOOGLE CRHOME limpia..
+google-chrome --user-data-dir=/home/lips/06
+
+#ACTIVAR EL DISPLAY EN EL COMPUTADOR
+estando en SUDO 
+xhost +
