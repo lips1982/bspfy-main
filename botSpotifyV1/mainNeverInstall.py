@@ -16,6 +16,8 @@ from datetime import datetime
 
 def main():
 
+    DATADIRAUSAR=(os.environ["DATADIR"])
+    print (DATADIRAUSAR)
     #--> Descomentar para ver en PC
     display = Display(visible=True, size=(1200,768))
 
@@ -173,7 +175,7 @@ def main():
 
     try:
         iniciarSpotify (email,passw)
-        MYIP="REEMPLAZARPUBLICIP"
+        MYIP="191.95.25.127"
         db.iniciarDB()
         db.updateOne("accountmanager",id,"acc_estado",10)
         db.insertOne("logreproduccion",{ "date":datetime.today().strftime('%Y-%m-%d %H:%M'),"email": email,"IP":MYIP })

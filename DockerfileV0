@@ -4,14 +4,12 @@ WORKDIR /app
 
 RUN apt-get update && \
     apt-get -y install --no-install-recommends \
-    git \
-    xvfb xserver-xephyr xauth python3-tk python3-dev \
+    git xvfb xserver-xephyr xauth python3-tk python3-dev \
     ca-certificates scrot \
     xz-utils \
     sshpass \
     apt-get clean \
 
-#RUN chromium chromium-driver
 RUN apt-get -y install unzip wget gpg && \
     wget -P /root/ https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
     apt-get -y install -f /root/google-chrome*.deb && \

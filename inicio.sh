@@ -3,7 +3,7 @@ clear
 echo "INICIANDO"
 sudo service docker stop
 
-while getopts k: option
+while getopts k: option, d: datadir
 do 
     case "${option}"
         in
@@ -12,7 +12,6 @@ do
     esac
 done
 echo "KEY_ACCES : $SERVERNAME"
-
 sed -i "s|SERVERNAME|${SERVERNAME}|g" daemon.json
 
 sudo cp -f daemon.json /etc/docker/
