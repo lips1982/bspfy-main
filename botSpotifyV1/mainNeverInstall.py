@@ -53,12 +53,14 @@ def main():
     #pyautogui.screenshot(os.path.join(pathImg,f"01-{USERDATADIR}-loging.png"))
     #loging= f"01-{email}-loging.png"
     #enviaremailerror(email,loging, password)  
-    acciones.refreshweb()
+    
+    #acciones.refreshweb()
     acciones.sleep(10)
       
     pyautogui.moveTo(1866, 1223)
     pyautogui.click()
     #valor=2
+    print ("ELIGIENDO METODO DE REPRODUCCIÓN")
     valor= random.randint(1,3)
     if valor == 1:  #reproducir lista
         
