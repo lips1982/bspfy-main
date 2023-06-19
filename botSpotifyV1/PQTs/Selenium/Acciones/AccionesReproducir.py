@@ -7,9 +7,7 @@ import time
 
 from PQTs.Selenium.Base import BaseAcciones
 from PQTs.Utilizar import urlSpotifysinginUS, sendermail, miscaciones
-
 from selenium.webdriver.common.by import By
-
 from PQTs.Paths import pathImg
 import pyautogui
 import random
@@ -59,7 +57,7 @@ class Acciones(BaseAcciones):
             else:
                 self.refreshweb()
                 print ("no encontro el xpath play de reproducción")
-                time.sleep(50000)
+                time.sleep(5)
                 self.abrirlistareproduccion()    
         else:  
             print ("no encontro el xpath lista  de reproducción")

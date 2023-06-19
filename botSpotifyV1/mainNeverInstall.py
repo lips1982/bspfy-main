@@ -35,7 +35,7 @@ def main():
     print("ingresando a spotify")
         #driver = BaseConexion().conexionChromeHeadless()
     def iniciarSpotify(email,passw):
-        screenshot = ImageGrab.grab()
+        screenshot = ImageGrab.grab(xdisplay="DISPLAY")
         try: 
             driver = BaseConexion().conexionChrome()
             print ("Driver iniciado")
