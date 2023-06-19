@@ -97,10 +97,12 @@ class Acciones(BaseAcciones):
                     pass
             else:
                 self.refreshweb()
-                print ("no encontro el xpath de reproducción")
-                time.sleep(500)
+                print ("no encontro el xpath play de reproducción")
+                time.sleep(50000)
                 self.abrirlistareproduccion()    
-        else:          
+        else:  
+            print ("no encontro el xpath lista  de reproducción")
+            time.sleep(50000)                    
             self.refreshweb()
             self.abrirlistareproduccion()
         time.sleep(10)
