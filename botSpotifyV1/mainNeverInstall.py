@@ -26,10 +26,10 @@ def main():
     display.start()
 
     #--> Descomentar para ver en PC
-    #pyautogui._pyautogui_x11._display = Xlib.display.Display(":0")
+    #pyautogui._pyautogui_x11._display = Xlib.display.Display(":5")
 
     pyautogui._pyautogui_x11._display = Xlib.display.Display(os.environ["DISPLAY"])
-    screenshot = ImageGrab.grab(xdisplay="")
+    screenshot = ImageGrab.grab(xdisplay=":5")
     time.sleep(5)
     driver = BaseConexion().conexionChrome()    
     acciones = Acciones(driver)    
