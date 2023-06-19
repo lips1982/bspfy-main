@@ -26,53 +26,14 @@ class Acciones(BaseAcciones):
     def ingresarSpotify(self):
         try:
             self.maximizar()
+            print ("Maximizar ventana")
             self.ir(urlSpotifysinginUS)
             self.sleep(2)
             return True
         except:
             self.salir()
             return False
-    def checklogingok(self):
-        xpatherrorpass = (By.XPATH,'//*[@id="root"]/div/div[2]/div/div/div[1]/span')
-        visibleErrorloging = self.explicitWaitElementoVisibility(10,xpatherrorpass)
-        if visibleErrorloging:
-            return True
-        else:
-            return False
 
-    def loginSpotify(self,cuenta,password):
-        try:
-            xpathInputEmail = (By.ID,"login-username")
-            xpathInputPassword = (By.ID,"login-password")        
-            xpathBotonLogin= (By.ID,"login-button")
-            xpathfailemailorpass= (By.XPATH,'//*[@id="root"]/div/div[2]/div/div/div[1]/span') 
-            
-            visibleInputEmail = self.explicitWaitElementoVisibility(15,xpathInputEmail)
-            if visibleInputEmail:
-                self.escribir(xpathInputEmail,cuenta)
-                
-                visibleInputPassword = self.explicitWaitElementoVisibility(15,xpathInputPassword)
-                if visibleInputPassword:
-                    self.escribir(xpathInputPassword,password)
-                    visibleBotonLogin = self.explicitWaitElementoVisibility(15,xpathBotonLogin)
-                    if visibleBotonLogin:
-                        self.click(xpathBotonLogin)
-                        self.explicitWaitElementoInvisibility(11,xpathBotonLogin)
-                                                                                             
-                    else:
-                        print(f"visibleBotonLogin {xpathBotonLogin}")
-                        return False
-                else:
-                    print(f"visibleInputPassword {visibleInputPassword}")
-                    return False
-            else:
-                print(f"visibleInputEmail {visibleInputEmail}")
-                return False
-        except:
-            self.refreshweb()
-            time.sleep(4)
-            return False
-    
     def abrirlistareproduccion(self):
         
         xpathlistadereproduccion= (By.XPATH,"//*[@id='main']/div/div[2]/div[2]/nav/div[2]/div[1]/div[2]/div[4]/div/div/div/div[2]/ul/div/div[2]/li[2]/div/div[1]") 

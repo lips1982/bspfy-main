@@ -9,7 +9,7 @@ from email import encoders
 from PQTs.Paths import pathImg
 from PQTs.Utilizar import sendermail
 
-def enviaremailerror(email,adjunto,error,valor):
+def enviaremailok(email,adjunto,error,valor):
     emailsender=random.choice(sendermail)
     corre, contrase = emailsender    
     remitente = corre
