@@ -51,7 +51,7 @@ def main():
     print ("Tomando capture")
     screenshot.save(os.path.join(pathImg, f"{datestamp}-loging.png"))
     adjunto= f"{datestamp}-loging.png"
-    enviaremailerror("INICIO BOT",adjunto, "INICIO")  
+    enviaremailerror("INICIO BOT",adjunto, "INICIO","CONECTADO")  
     
     acciones.refreshweb()
     acciones.sleep(10)
