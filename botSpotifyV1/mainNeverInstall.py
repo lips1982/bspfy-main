@@ -12,7 +12,7 @@ import random
 from PQTs.Selenium.Acciones.AccionesReproducir import Acciones
 from PQTs.Selenium.Acciones.enviaremail import *
 from datetime import datetime
-
+from PIL import ImageGrab
 
 def main():
 
@@ -35,6 +35,7 @@ def main():
     print("ingresando a spotify")
         #driver = BaseConexion().conexionChromeHeadless()
     def iniciarSpotify(email,passw):
+        screenshot = ImageGrab.grab()
         try: 
             driver = BaseConexion().conexionChrome()
             print ("Driver iniciado")
@@ -51,7 +52,7 @@ def main():
         print("Linea 51")
         print("Primera captura iniciando")
         acciones.sleep(10)
-        pyautogui.screenshot(os.path.join(pathImg,"loging.png"))
+        screenshot.save(os.path.join(pathImg,"loging.png"))
         acciones.sleep(15)
         mensaje= f"loging.png"
         enviaremailmensaje(email,mensaje)     
@@ -64,7 +65,7 @@ def main():
                 f.write("Reproduciendo la lista ") 
             mensaje= "mensaje1.txt"
             enviaremailmensaje(email,mensaje)
-            reproducir = acciones.abrirlistareproduccion()
+            acciones.abrirlistareproduccion()
             time.sleep(10)
             #pyautogui.moveTo(1065, 745)
             #pyautogui.moveTo(1065, 745)
@@ -78,7 +79,8 @@ def main():
             #time.sleep(15)
             #imagen= "abrirlista.png"
             #enviaremailreproduccion(email,imagen)            
-            pyautogui.screenshot(os.path.join(pathImg,f"PlayList.png"))
+            #pyautogui.screenshot(os.path.join(pathImg,f"PlayList.png"))
+            
             time.sleep(15)
             imagen= "PlayList.png"
             enviaremailreproduccion(email,imagen)
