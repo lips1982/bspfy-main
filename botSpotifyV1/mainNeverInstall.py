@@ -44,18 +44,20 @@ def main():
 
         acciones.sleep(4)
         acciones.refreshweb()
+        print("Primera captura iniciando")
         acciones.sleep(10)
         pyautogui.screenshot(os.path.join(pathImg,"loging.png"))
         acciones.sleep(15)
         mensaje= f"loging.png"
-        enviaremailmensaje(email,mensaje)        
+        enviaremailmensaje(email,mensaje)     
+        print("Primera captura enviada")   
         pyautogui.moveTo(1866, 1223)
         pyautogui.click()
         valor= random.randint(1,3)
         if valor == 1:  #reproducir lista
-            with open(os.path.join(pathImg,f"mensaje.txt"), 'w') as f:
+            with open(os.path.join(pathImg,f"mensaje1.txt"), 'w') as f:
                 f.write("Reproduciendo la lista ") 
-            mensaje= "mensaje.txt"
+            mensaje= "mensaje1.txt"
             enviaremailmensaje(email,mensaje)
             reproducir = acciones.abrirlistareproduccion()
             time.sleep(10)
