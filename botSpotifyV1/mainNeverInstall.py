@@ -14,6 +14,7 @@ from PQTs.Selenium.Acciones.enviaremail import *
 from datetime import datetime
 
 
+
 def main():
 
     print ("INICIANDO PYTHON")
@@ -27,7 +28,7 @@ def main():
     #--> Descomentar para ver en PC
     #pyautogui._pyautogui_x11._display = Xlib.display.Display(":0")
 
-    pyautogui._pyautogui_x11._display = Xlib.display.Display(os.environ[":0"])
+    pyautogui._pyautogui_x11._display = Xlib.display.Display(os.environ["DISPLAY"])
 
     time.sleep(5)
     
