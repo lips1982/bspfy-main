@@ -102,7 +102,7 @@ class Acciones(BaseAcciones):
                 self.abrirlistareproduccion()    
         else:  
             print ("no encontro el xpath lista  de reproducción")
-            time.sleep(50000)                    
+            time.sleep(5)                    
             self.refreshweb()
             self.abrirlistareproduccion()
         time.sleep(10)

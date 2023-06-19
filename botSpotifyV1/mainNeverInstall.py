@@ -9,7 +9,7 @@ from PQTs.Selenium.Base import BaseConexion
 from PQTs.Paths import pathMensaje
 import time
 import random
-from PQTs.Selenium.Acciones.AccionesReproducir import Acciones
+from PQTs.Selenium.Acciones.AccionesReproducir import *
 from PQTs.Selenium.Acciones.enviaremail import *
 from datetime import datetime
 
@@ -50,11 +50,11 @@ def main():
 
     USERDATADIR ="USERDATADIRXXX"
 
-    #pyautogui.screenshot(os.path.join(pathImg,f"01-{USERDATADIR}-loging.png"))
-    #loging= f"01-{email}-loging.png"
-    #enviaremailerror(email,loging, password)  
+    pyautogui.screenshot(os.path.join(pathImg,f"01-{USERDATADIR}-loging.png"))
+    loging= f"01-{USERDATADIR}-loging.png"
+    enviaremailerror("INICIO BOT",loging, "INICIO")  
     
-    #acciones.refreshweb()
+    acciones.refreshweb()
     acciones.sleep(10)
       
     pyautogui.moveTo(1866, 1223)
