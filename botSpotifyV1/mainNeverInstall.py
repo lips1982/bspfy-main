@@ -6,7 +6,7 @@ import pyautogui
 import os
 from PQTs.MongoDB.MongoDB import MongoDB
 from PQTs.Selenium.Base import BaseConexion
-from PQTs.Paths import pathImg
+from PQTs.Paths import pathMensaje
 import time
 import random
 from PQTs.Selenium.Acciones.AccionesReproducir import Acciones
@@ -61,7 +61,7 @@ def main():
     valor=1
     #valor= random.randint(1,3)
     if valor == 1:  #reproducir lista
-        with open(os.path.join(pathImg,f"mensaje.txt"), 'w') as f:
+        with open(pathMensaje, 'w') as f:
             f.write("Reproduciendo la lista ") 
         mensaje= "mensaje.txt"
         enviaremailmensaje(USERDATADIR,mensaje)
