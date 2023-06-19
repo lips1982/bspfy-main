@@ -31,7 +31,7 @@ def main():
     time.sleep(10)
     email="GMAILS"
     passw="PASW"
-    print("Iniciando driver")
+    
     
 
     
@@ -39,12 +39,15 @@ def main():
         #driver = BaseConexion().conexionChromeHeadless()
    
     def iniciarSpotify(email):
-        driver = BaseConexion().conexionChrome()
-        time.sleep(5)
-        acciones = Acciones(driver)        
-        acciones.sleep(10)
-        acciones.ingresarSpotify()
-
+        print("Iniciando driver")
+        try:
+            driver = BaseConexion().conexionChrome()
+            time.sleep(5)
+            acciones = Acciones(driver)        
+            acciones.sleep(10)
+            acciones.ingresarSpotify()
+        except Exception as e:
+            print (e)
         print("Linea 48")
 
         acciones.refreshweb()
