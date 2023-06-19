@@ -18,16 +18,16 @@ def main():
 
 
     #--> Descomentar para ver en PC
-    #display = Display(visible=True, size=(1200,768))
+    display = Display(visible=True, size=(1200,768))
 
-    display = Display(visible=True, size=(1900,1268), backend="xvfb", use_xauth=True)
+    #display = Display(visible=True, size=(1900,1268), backend="xvfb", use_xauth=True)
 
     display.start()
 
     #--> Descomentar para ver en PC
-    #pyautogui._pyautogui_x11._display = Xlib.display.Display(":0")
+    pyautogui._pyautogui_x11._display = Xlib.display.Display(":0")
 
-    pyautogui._pyautogui_x11._display = Xlib.display.Display(os.environ['DISPLAY'])
+    #pyautogui._pyautogui_x11._display = Xlib.display.Display(os.environ['DISPLAY'])
     hilos=1
     email="GMAILS"
     passw="PASW"
