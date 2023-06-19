@@ -47,7 +47,6 @@ def main():
         except Exception as e:
             print(f"{e}")       
         print("Linea 48")
-
         acciones.refreshweb()
         print("Linea 51")
         print("Primera captura iniciando")
