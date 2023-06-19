@@ -97,6 +97,8 @@ class Acciones(BaseAcciones):
                     pass
             else:
                 self.refreshweb()
+                print ("no encontro el xpath de reproducción")
+                time.sleep(500)
                 self.abrirlistareproduccion()    
         else:          
             self.refreshweb()
