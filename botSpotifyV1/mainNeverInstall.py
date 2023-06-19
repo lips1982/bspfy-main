@@ -28,26 +28,22 @@ def main():
     #pyautogui._pyautogui_x11._display = Xlib.display.Display(":0")
 
     pyautogui._pyautogui_x11._display = Xlib.display.Display(os.environ['DISPLAY'])
-    
+    time.sleep(10)
     email="GMAILS"
     passw="PASW"
     print("Iniciando driver")
-    try:
-        driver = BaseConexion().conexionChrome()
+    
 
-    except Exception as e:
-        print (e)
-        
-    print("Conectando drive")
+    
+
         #driver = BaseConexion().conexionChromeHeadless()
    
-    def iniciarSpotify(email,driver):
+    def iniciarSpotify(email):
+        driver = BaseConexion().conexionChrome()
+        time.sleep(5)
         acciones = Acciones(driver)        
         acciones.sleep(10)
-        try:
-            acciones.ingresarSpotify()
-        except Exception as e:
-            print (e)
+        acciones.ingresarSpotify()
 
         print("Linea 48")
 
@@ -99,7 +95,7 @@ def main():
         
 
 
-    iniciarSpotify (email,driver)
+    iniciarSpotify (email)
 
 
 
