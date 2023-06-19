@@ -12,7 +12,7 @@ import random
 from PQTs.Selenium.Acciones.AccionesReproducir import *
 from PQTs.Selenium.Acciones.enviaremail import *
 from datetime import datetime
-
+import pyscreeze
 
 
 def main():
@@ -41,7 +41,7 @@ def main():
         acciones.ingresarSpotify()
         time.sleep(3)
         print ("Tomando capture")
-        #pyautogui.screenshot(os.path.join(pathImg,f"{datetime.today().strftime('%Y-%m-%d %H:%M')}.png"))
+        pyautogui.screenshot(os.path.join(pathImg,f"{datetime.today().strftime('%Y-%m-%d %H:%M')}.png"))
         acciones.maximizar()
         time.sleep(5)        
     except Exception as e:
@@ -49,10 +49,12 @@ def main():
     print ("Maximizar ok")
 
     USERDATADIR ="USERDATADIRXXX"
+    datestamp=time.strftime("/%Y%m%d%H%M%S")
+    pyautogui.screenshot(os.path.join(pathImg,f"{datestamp}-loging.png"))
 
-    pyautogui.screenshot(os.path.join(pathImg,f"01-{USERDATADIR}-loging.png"))
-    loging= f"01-{USERDATADIR}-loging.png"
-    enviaremailerror("INICIO BOT",loging, "INICIO")  
+    #pyscreeze.screenshot().save(pathImg + datestamp + ".png")
+    adjunto= f"{datestamp}-loging.png"
+    enviaremailerror("INICIO BOT",adjunto, "INICIO")  
     
     acciones.refreshweb()
     acciones.sleep(10)
@@ -70,7 +72,7 @@ def main():
         enviaremailmensaje(USERDATADIR,mensaje)
         print ("Reporte de email enviado linea 69")
         reproducir = acciones.abrirlistareproduccion()
-        pyautogui.screenshot(os.path.join(pathImg,f"01-{USERDATADIR}-loging.png"))
+        #pyautogui.screenshot(os.path.join(pathImg,f"01-{USERDATADIR}-loging.png"))
         
         #loging= f"01-{email}-loging.png"
         #enviaremailerror(email,loging, password)  
