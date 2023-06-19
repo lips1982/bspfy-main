@@ -41,7 +41,7 @@ def main():
             acciones.ingresarSpotify()
         except:
             acciones.ingresarSpotify()
-
+        print("Linea 44")
         acciones.sleep(4)
         acciones.refreshweb()
         print("Primera captura iniciando")
