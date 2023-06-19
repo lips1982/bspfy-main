@@ -37,12 +37,13 @@ def main():
         #driver = BaseConexion().conexionChromeHeadless()
 
         acciones = Acciones(driver)
+        acciones.sleep(10)
         try:
             acciones.ingresarSpotify()
         except:
             acciones.ingresarSpotify()
         print("Linea 44")
-        acciones.sleep(4)
+
         acciones.refreshweb()
         print("Primera captura iniciando")
         acciones.sleep(10)
