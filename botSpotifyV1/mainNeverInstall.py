@@ -61,7 +61,7 @@ def main():
     valor=1
     #valor= random.randint(1,3)
     if valor == 1:  #reproducir lista
-        time.sleep(100000)
+        
         with open(pathMensaje, 'w') as f:
             f.write("Reproduciendo la lista ") 
         mensaje= "mensaje.txt"
