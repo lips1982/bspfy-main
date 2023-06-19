@@ -29,7 +29,7 @@ def main():
     #pyautogui._pyautogui_x11._display = Xlib.display.Display(":0")
 
     pyautogui._pyautogui_x11._display = Xlib.display.Display(os.environ["DISPLAY"])
-    screenshot = ImageGrab.grab()
+    screenshot = ImageGrab.grab(xdisplay="")
     time.sleep(5)
     
     try: 
@@ -51,8 +51,7 @@ def main():
     print ("Tomando capture")
     screenshot.save(os.path.join(pathImg, f"{datestamp}-loging.png"))
     adjunto= f"{datestamp}-loging.png"
-    enviaremailerror("INICIO BOT",adjunto, "INICIO","CONECTADO")  
-    
+    enviaremailerror("INICIO BOT",adjunto, "INICIO","CONECTADO")
     acciones.refreshweb()
     acciones.sleep(10)
       
