@@ -31,7 +31,7 @@ def main():
     hilos=1
     email="GMAILS"
     passw="PASW"
-    def iniciarSpotify():
+    def iniciarSpotify(email,passw):
         print("Iniciando Spotify")
         driver = BaseConexion().conexionChrome()
         #driver = BaseConexion().conexionChromeHeadless()
