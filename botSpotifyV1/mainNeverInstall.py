@@ -26,9 +26,10 @@ def main():
     print ("Display Iniciado")
     #--> Descomentar para ver en PC
     
-    #pyautogui._pyautogui_x11._display = Xlib.display.Display(":0")
+    pyautogui._pyautogui_x11._display = Xlib.display.Display(":0")
 
-    pyautogui._pyautogui_x11._display = Xlib.display.Display(os.environ["DISPLAY"])
+    #pyautogui._pyautogui_x11._display = Xlib.display.Display(os.environ["DISPLAY"])
+    
     time.sleep(5)
     
     try: 
