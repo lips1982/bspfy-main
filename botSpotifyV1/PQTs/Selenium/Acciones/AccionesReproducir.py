@@ -18,7 +18,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
-from PQTs.Utilizar import poollistas
+from PQTs.Utilizar import poollistas, poolartista
 from PQTs.Selenium.Acciones.enviaremail import enviaremailreproduccion
 
 
@@ -75,8 +75,8 @@ class Acciones(BaseAcciones):
     
     def abrirlistareproduccion(self):
         
-        xpathlistadereproduccion= (By.XPATH,"//li[@role = 'listitem']") 
-        xpathbotonplay= (By.XPATH,"//button[@data-testid = 'play-button' and @class = 'Button-qlcn5g-0 kgFBvD']")
+        xpathlistadereproduccion= (By.XPATH,"//*[@id='main']/div/div[2]/div[2]/nav/div[2]/div[1]/div[2]/div[4]/div/div/div/div[2]/ul/div/div[2]/li[2]/div/div[1]") 
+        xpathbotonplay= (By.XPATH,"//button[@data-testid = 'play-button' and @class = 'Button-sc-qlcn5g-0 DjJKP']")
         xpathcorazones=(By.XPATH,"//span[@class='Type__TypeElement-goli3j-0 eDbSCl']") 
         
         listadereproduccion = self.explicitWaitElementoVisibility(15,xpathlistadereproduccion)
@@ -134,7 +134,8 @@ class Acciones(BaseAcciones):
 
 
     def reproducir2(self,email):
-        self.ir('https://open.spotify.com/artist/79y2edTYTHJtBpwcVuCnhH')
+        albumartista = random.choice(poolartista)
+        self.ir(albumartista)
         time.sleep(10)
         pyautogui.moveTo(1065, 745)
         pyautogui.click(1065, 745)    
@@ -144,11 +145,11 @@ class Acciones(BaseAcciones):
         pyautogui.click(100,700)    
         pyautogui.click(100,700)       
 
-        time.sleep(10)
+        time.sleep(4)                      
         xpathfollow=(By.XPATH,"//button[@class='idI9vydtCzXVhU1BaKLw']")
-        xpathplay= (By.XPATH,"//button[@data-testid='play-button'and @class='Button-qlcn5g-0 kgFBvD']")
+        xpathplay= (By.XPATH,"//button[@data-testid='play-button'and @class='Button-sc-qlcn5g-0 DjJKP']")
 
-        follow = self.explicitWaitElementoVisibility(15,xpathplay)
+        follow = self.explicitWaitElementoVisibility(15,xpathfollow)
         try:
             if follow:
                 self.click(xpathfollow)
@@ -181,8 +182,8 @@ class Acciones(BaseAcciones):
         pyautogui.moveTo(100, 700)
         pyautogui.click(100,700)    
         pyautogui.click(100,700)    
-
-        xpathplay= (By.XPATH,"//button[@data-testid='play-button'and @class='Button-qlcn5g-0 kgFBvD']")
+                            
+        xpathplay= (By.XPATH,"//button[@data-testid = 'play-button' and @class = 'Button-sc-qlcn5g-0 DjJKP']")
      
         play = self.explicitWaitElementoVisibility(15,xpathplay)
         if play:

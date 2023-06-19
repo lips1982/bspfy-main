@@ -42,24 +42,23 @@ def main():
         print ("Tomando capture")
         #pyautogui.screenshot(os.path.join(pathImg,f"{datetime.today().strftime('%Y-%m-%d %H:%M')}.png"))
         acciones.maximizar()
-        time.sleep(10)        
+        time.sleep(5)        
     except Exception as e:
         print(f"{e}")
-    print ("Esperando 10 seg")
+    print ("Maximizar ok")
 
     USERDATADIR ="USERDATADIRXXX"
 
     #pyautogui.screenshot(os.path.join(pathImg,f"01-{USERDATADIR}-loging.png"))
     #loging= f"01-{email}-loging.png"
     #enviaremailerror(email,loging, password)  
-    acciones.sleep(4)
     acciones.refreshweb()
     acciones.sleep(10)
       
     pyautogui.moveTo(1866, 1223)
     pyautogui.click()
-    valor=1
-    #valor= random.randint(1,3)
+    #valor=2
+    valor= random.randint(1,3)
     if valor == 1:  #reproducir lista
         
         with open(pathMensaje, 'w') as f:
@@ -93,7 +92,7 @@ def main():
         time.sleep(500)            
         
     elif valor==2: #reproducir directamente del album
-
+        print ("Iniciando Reproducir album de artista")
         acciones.reproducir2(USERDATADIR)
             
     elif valor ==3:

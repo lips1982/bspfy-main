@@ -25,6 +25,8 @@ mainNeverInstall.py
 #CREAR CARPETA DE GOOGLE CRHOME limpia..
 google-chrome --user-data-dir=/home/lips/06
 
+google-chrome --user-data-dir=/home/lips/bspfy-main/data-dir
+
 #ACTIVAR EL DISPLAY EN EL COMPUTADOR
 #estando en SUDO 
 xhost +
