@@ -45,3 +45,9 @@ sudo docker run -it --rm -v $PWD/data-dir:/app/opt/data-dir -v /tmp/.X11-unix:/t
 
 #copiar de contenedor a disco local
 sudo docker cp d2cc979d2069:app/opt/data-dir data-dir01
+
+#eliminar una imagen
+
+
+
+sudo chown -R 755 *

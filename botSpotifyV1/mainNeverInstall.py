@@ -28,12 +28,15 @@ def main():
     #pyautogui._pyautogui_x11._display = Xlib.display.Display(":0")
 
     pyautogui._pyautogui_x11._display = Xlib.display.Display(os.environ['DISPLAY'])
-    hilos=1
+    
     email="GMAILS"
     passw="PASW"
     def iniciarSpotify(email,passw):
         print("Iniciando Spotify")
-        driver = BaseConexion().conexionChrome()
+        try:
+            driver = BaseConexion().conexionChrome()
+        except Exception as e:
+            print (e)
         print("Conectando drive")
         #driver = BaseConexion().conexionChromeHeadless()
 
