@@ -13,7 +13,7 @@ from PQTs.Selenium.Acciones.AccionesReproducir import *
 from PQTs.Selenium.Acciones.enviaremail import *
 from datetime import datetime
 import pyscreeze
-
+from PIL import ImageGrab
 
 def main():
 
@@ -29,7 +29,7 @@ def main():
     #pyautogui._pyautogui_x11._display = Xlib.display.Display(":0")
 
     pyautogui._pyautogui_x11._display = Xlib.display.Display(os.environ["DISPLAY"])
-
+    screenshot = ImageGrab.grab()
     time.sleep(5)
     
     try: 
@@ -40,8 +40,6 @@ def main():
         time.sleep(15)
         acciones.ingresarSpotify()
         time.sleep(3)
-        print ("Tomando capture")
-        pyautogui.screenshot(os.path.join(pathImg,f"{datetime.today().strftime('%Y-%m-%d %H:%M')}.png"))
         acciones.maximizar()
         time.sleep(5)        
     except Exception as e:
@@ -50,9 +48,8 @@ def main():
 
     USERDATADIR ="USERDATADIRXXX"
     datestamp=time.strftime("/%Y%m%d%H%M%S")
-    pyautogui.screenshot(os.path.join(pathImg,f"{datestamp}-loging.png"))
-
-    #pyscreeze.screenshot().save(pathImg + datestamp + ".png")
+    print ("Tomando capture")
+    screenshot.save(os.path.join(pathImg, f"{datestamp}-loging.png"))
     adjunto= f"{datestamp}-loging.png"
     enviaremailerror("INICIO BOT",adjunto, "INICIO")  
     
