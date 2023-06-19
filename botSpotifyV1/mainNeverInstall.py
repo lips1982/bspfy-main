@@ -43,108 +43,36 @@ def main():
         print ("Tomando capture")
         #pyautogui.screenshot(os.path.join(pathImg,f"{datetime.today().strftime('%Y-%m-%d %H:%M')}.png"))
         acciones.maximizar()
-        time.sleep(64000)        
+        time.sleep(10)        
     except Exception as e:
         print(f"{e}")
     print ("Esperando 10 seg")
 
-    """
-    hilos=1
-    inicio= time.time()
-    */
-    db=MongoDB(hilos)
-    db.iniciarDB()
-    email=[]
-    id=[]
-    passw=[]
-    valor= random.randint(0,20)
-    time.sleep(valor)
+    USERDATADIR ="USERDATADIRXXX"
 
-    result= db.findby1("accountmanager","acc_estado",5)
-    for elem in result:
-        email= (elem["email"])
-        id=(elem["_id"])
-        passw =(elem["pass"])
-        db.updateOne("accountmanager",id,"acc_estado",7)
-        db.updateOne("accountmanager",id,"datelogin",datetime.today().strftime('%Y-%m-%d %H:%M'))  
-        #for elemid in id:
-        #    db.updateOne("accountmanager",elemid,"creacionlistasentrenamiento",2)
-        db.cerrarConexion()
-    
-
-    print (db,email,id,passw)
-
-
-    def iniciarSpotify(email,password):
-        print("Iniciando Spotify")
-        driver = BaseConexion().conexionChrome()
-        #driver = BaseConexion().conexionChromeHeadless()
-
-        acciones = Acciones(driver)
-        try:
-            ingresando=acciones.ingresarSpotify()
-        except:
-            ingresando=acciones.ingresarSpotify()
-
-        while ingresando==False:
-            try:
-                ingresando=acciones.ingresarSpotify()
-            except:
-                ingresando=acciones.ingresarSpotify()
-
+    #pyautogui.screenshot(os.path.join(pathImg,f"01-{USERDATADIR}-loging.png"))
+    #loging= f"01-{email}-loging.png"
+    #enviaremailerror(email,loging, password)  
+    acciones.sleep(4)
+    acciones.refreshweb()
+    acciones.sleep(10)
+      
+    pyautogui.moveTo(1866, 1223)
+    pyautogui.click()
+    valor=1
+    #valor= random.randint(1,3)
+    if valor == 1:  #reproducir lista
+        with open(os.path.join(pathImg,f"mensaje.txt"), 'w') as f:
+            f.write("Reproduciendo la lista ") 
+        mensaje= "mensaje.txt"
+        enviaremailmensaje(USERDATADIR,mensaje)
         
-        returnLoginSpotify= acciones.loginSpotify(email,password)
-        i=0
-        while i <=3:
-            if returnLoginSpotify== False:
-                returnLoginSpotify= acciones.loginSpotify(email,password)
-                i+=1
-            else:
-                i=4
-        time.sleep(5)    
-        ckecloging= acciones.checklogingok()
-        if ckecloging == True:
-            db.iniciarDB()
-            db.updateOne("accountmanager",id,"ckeclog","logfail")
-            db.updateOne("accountmanager",id,"acc_estado",0)
-            db.cerrarConexion()
-            pyautogui.screenshot(os.path.join(pathImg,f"Errorlogin.png"))
-            time.sleep(15)
-            imagen= "Errorlogin.png"
-            enviaremailerror(f'Error Password Incorrecto: {email}',imagen,"Loging ERROR", "PASSWORD FAIL") 
-            time.sleep(5)           
-            exit()
+        reproducir = acciones.abrirlistareproduccion()
+        pyautogui.screenshot(os.path.join(pathImg,f"01-{USERDATADIR}-loging.png"))
+        #loging= f"01-{email}-loging.png"
+        #enviaremailerror(email,loging, password)  
 
-        if ckecloging == False:
-            #print(f"Hilo {email} - SinginSpotify {returnLoginSpotify}")
-            #pyautogui.screenshot(os.path.join(pathImg,f"01-{email}-loging.png"))
-            #loging= f"01-{email}-loging.png"
-            #enviaremailerror(email,loging, password)  
-            db.iniciarDB()
-            db.updateOne("accountmanager",id,"ckeclog","logingok")
-            db.cerrarConexion()
-        acciones.sleep(4)
-        acciones.refreshweb()
-        acciones.sleep(10)
-        #pyautogui.screenshot(os.path.join(pathImg,"loging.png"))
-        #acciones.sleep(15)
-        #mensaje= f"loging.png"
-        #enviaremailmensaje(email,mensaje)        
-        pyautogui.moveTo(1866, 1223)
-        pyautogui.click()
-        valor= random.randint(1,3)
-        if valor == 1:  #reproducir lista
-            with open(os.path.join(pathImg,f"mensaje.txt"), 'w') as f:
-                f.write("Reproduciendo la lista ") 
-            mensaje= "mensaje.txt"
-            #enviaremailmensaje(email,mensaje)
-            reproducir = acciones.abrirlistareproduccion()
-            if reproducir== False:
-                db.iniciarDB()
-                db.updateOne("accountmanager",id,"acc_estado",3)
-                db.cerrarConexion()  
-                exit()                  
-            time.sleep(10)
+        time.sleep(10)
             #pyautogui.moveTo(1065, 745)
             #pyautogui.moveTo(1065, 745)
             #pyautogui.click(1065, 745)            
@@ -157,44 +85,21 @@ def main():
             #time.sleep(15)
             #imagen= "abrirlista.png"
             #enviaremailreproduccion(email,imagen)            
-            pyautogui.screenshot(os.path.join(pathImg,f"PlayList.png"))
-            time.sleep(15)
-            imagen= "PlayList.png"
-            enviaremailreproduccion(email,imagen)
-            time.sleep(500)            
-        
-        elif valor==2: #reproducir directamente del album
-
-            acciones.reproducir2(email)
-            
-        elif valor ==3:
-
-            acciones.reproducir3(email)
-
-        
-
-    try:
-        iniciarSpotify (email,passw)
-        MYIP="191.95.25.127"
-        db.iniciarDB()
-        db.updateOne("accountmanager",id,"acc_estado",10)
-        db.insertOne("logreproduccion",{ "date":datetime.today().strftime('%Y-%m-%d %H:%M'),"email": email,"IP":MYIP })
-        db.cerrarConexion()
-
-    except Exception as e:
-        with open(os.path.join(pathImg,f"error.txt"), 'w') as f:
-            f.write(str(e))        
-        db.iniciarDB()
-        db.updateOne("accountmanager",id,"acc_estado",9)
-        db.cerrarConexion()
-        pyautogui.screenshot(os.path.join(pathImg,f"ErrorReproducir.png"))
+        pyautogui.screenshot(os.path.join(pathImg,f"PlayList.png"))
         time.sleep(15)
-        errors= "error.txt"
-        enviaremailerror(f'Error en 9 : {email}',errors,"Error 9", "PASSWORD FAIL")           
-        #error= "error.txt"
-        #enviaremailerror(email,error)
-"""
+        imagen= "PlayList.png"
+        enviaremailreproduccion(USERDATADIR,imagen)
+        time.sleep(500)            
+        
+    elif valor==2: #reproducir directamente del album
 
+        acciones.reproducir2(USERDATADIR)
+            
+    elif valor ==3:
+
+            acciones.reproducir3(USERDATADIR)
+
+        
      
     display.stop()
 

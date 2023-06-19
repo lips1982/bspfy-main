@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "INICIANDO ENTRYPOINT"
+git clone https://github.com/lips1982/bspfy-main.git /opt
+mv /opt/bspfy-main/botSpotifyV1/* /app
+rm -R /opt/bspfy-main
