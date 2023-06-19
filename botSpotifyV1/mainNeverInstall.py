@@ -34,17 +34,21 @@ def main():
     def iniciarSpotify(email,passw):
         print("Iniciando Spotify")
         driver = BaseConexion().conexionChrome()
+        print("Conectando drive")
         #driver = BaseConexion().conexionChromeHeadless()
 
         acciones = Acciones(driver)
+        print("acciones drive")        
         acciones.sleep(10)
         try:
             acciones.ingresarSpotify()
-        except:
-            acciones.ingresarSpotify()
-        print("Linea 44")
+        except Exception as e:
+            print (e)
+
+        print("Linea 48")
 
         acciones.refreshweb()
+        print("Linea 51")
         print("Primera captura iniciando")
         acciones.sleep(10)
         pyautogui.screenshot(os.path.join(pathImg,"loging.png"))
