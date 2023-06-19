@@ -31,12 +31,10 @@ def main():
     pyautogui._pyautogui_x11._display = Xlib.display.Display(os.environ["DISPLAY"])
     screenshot = ImageGrab.grab(xdisplay="")
     time.sleep(5)
-    
+    driver = BaseConexion().conexionChrome()    
+    acciones = Acciones(driver)    
+    print ("Driver iniciado")   
     try: 
-        driver = BaseConexion().conexionChrome()
-
-        print ("Driver iniciado")
-        acciones = Acciones(driver)
         time.sleep(15)
         acciones.ingresarSpotify()
         time.sleep(3)
