@@ -30,5 +30,5 @@ ENTRYPOINT ["/srv/entrypoint.sh"]
 
 
 
-CMD ["bash", "-c", "python3 mainNeverInstall.py"]
+CMD ["bash", "-c", "Xvfb :5 -ac & export DISPLAY=:5 ; python3 mainNeverInstall.py"]
 
