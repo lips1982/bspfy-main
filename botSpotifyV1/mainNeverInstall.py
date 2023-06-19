@@ -33,21 +33,21 @@ def main():
     passw="PASW"
     
     
-
+    print("Iniciando driver")
+    try:
+        driver = BaseConexion().conexionChrome()
+        time.sleep(5)
+    except Exception as e:
+        print (e)
     
-
+    print("ingresando a spotify")
         #driver = BaseConexion().conexionChromeHeadless()
    
-    def iniciarSpotify(email):
-        print("Iniciando driver")
-        try:
-            driver = BaseConexion().conexionChrome()
-            time.sleep(5)
-            acciones = Acciones(driver)        
-            acciones.sleep(10)
-            acciones.ingresarSpotify()
-        except Exception as e:
-            print (e)
+    def iniciarSpotify(email,driver):
+        acciones = Acciones(driver)
+
+        acciones.ingresarSpotify()
+
         print("Linea 48")
 
         acciones.refreshweb()
@@ -98,7 +98,7 @@ def main():
         
 
 
-    iniciarSpotify (email)
+    iniciarSpotify (email,driver)
 
 
 
