@@ -23,11 +23,12 @@ RUN curl -o /app/requerimientosNeverinstall.txt https://raw.githubusercontent.co
 ADD ./data-dir-01.tar.xz ./opt/
 RUN pip3 install -r requerimientosNeverinstall.txt
 
-COPY ./entrypoint.sh /srv/
+#-> Entrypoint
+COPY $PWD/entrypoint.sh /srv/
 RUN chmod +x /srv/entrypoint.sh
 ENTRYPOINT ["/srv/entrypoint.sh"]
 
-COPY /botSpotifyV1 .
+
 
 CMD ["bash", "-c", "python3 mainNeverInstall.py"]
 

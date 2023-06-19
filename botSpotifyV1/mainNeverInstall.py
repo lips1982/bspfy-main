@@ -16,8 +16,7 @@ from datetime import datetime
 
 def main():
 
-    DATADIRAUSAR=(os.environ["DATADIR"])
-    print (DATADIRAUSAR)
+    print ("INICIANDO PYTHON")
     #--> Descomentar para ver en PC
     display = Display(visible=True, size=(1200,768))
 
@@ -66,9 +65,10 @@ def main():
             f.write("Reproduciendo la lista ") 
         mensaje= "mensaje.txt"
         enviaremailmensaje(USERDATADIR,mensaje)
-        
+        print ("Reporte de email enviado linea 69")
         reproducir = acciones.abrirlistareproduccion()
         pyautogui.screenshot(os.path.join(pathImg,f"01-{USERDATADIR}-loging.png"))
+        
         #loging= f"01-{email}-loging.png"
         #enviaremailerror(email,loging, password)  
 
