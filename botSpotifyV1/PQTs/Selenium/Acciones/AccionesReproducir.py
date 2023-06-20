@@ -33,8 +33,8 @@ class Acciones(BaseAcciones):
             return False
 
     def abrirlistareproduccion(self):
-        
-        xpathlistadereproduccion= (By.XPATH,"//*[@id='main']/div/div[2]/div[2]/nav/div[2]/div[1]/div[2]/div[4]/div/div/div/div[2]/ul/div/div[2]/li[2]/div/div[1]") 
+
+        xpathlistadereproduccion= (By.XPATH,"/html/body/div[4]/div/div[2]/div[2]/nav/div[2]/div[1]/div[2]/div[4]/div/div/div/div[2]/ul/div/div[2]/li[2]/div/div[1]") 
         xpathbotonplay= (By.XPATH,"//button[@data-testid = 'play-button' and @class = 'Button-sc-qlcn5g-0 DjJKP']")
         xpathcorazones=(By.XPATH,"//span[@class='Type__TypeElement-goli3j-0 eDbSCl']") 
         

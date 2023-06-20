@@ -41,15 +41,13 @@ def main():
             acciones = Acciones(driver)
             acciones.ingresarSpotify()
             time.sleep(3)
-            print ("Tomando capture")
             acciones.maximizar()
         except Exception as e:
             print(f"{e}")       
         print("Linea 48")
         acciones.refreshweb()
         print("Linea 51")
-        print("Primera captura iniciando")
-        acciones.sleep(10)
+        acciones.sleep(5)
         #pyautogui.screenshot(os.path.join(pathImg,f"loging.png"))      
         #mensaje= f"loging.png"
         #enviaremailmensaje(email,mensaje)     
