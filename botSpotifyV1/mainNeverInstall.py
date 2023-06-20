@@ -47,7 +47,7 @@ def main():
         print("Linea 48")
         acciones.refreshweb()
         print("Linea 51")
-        acciones.sleep(5)
+        acciones.sleep(5000)
         #pyautogui.screenshot(os.path.join(pathImg,f"loging.png"))      
         #mensaje= f"loging.png"
         #enviaremailmensaje(email,mensaje)     
