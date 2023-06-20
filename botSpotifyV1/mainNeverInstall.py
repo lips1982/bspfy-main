@@ -18,7 +18,7 @@ def main():
 
 
     #--> Descomentar para ver en PC
-    #display = Display(visible=True, size=(1200,768))
+    #display = Display(visible=True, size=(1900,1268))
 
     display = Display(visible=True, size=(1900,1268), backend="xvfb", use_xauth=True)
 
@@ -35,7 +35,6 @@ def main():
     print("ingresando a spotify")
         #driver = BaseConexion().conexionChromeHeadless()
     def iniciarSpotify(email,passw):
-        screenshot = ImageGrab.grab(xdisplay="")
         try: 
             driver = BaseConexion().conexionChrome()
             print ("Driver iniciado")
@@ -52,7 +51,7 @@ def main():
         print("Linea 51")
         print("Primera captura iniciando")
         acciones.sleep(10)
-        screenshot.save(os.path.join(pathImg,"loging.png"))
+        pyautogui.screenshot(os.path.join(pathImg,f"loging.png"))      
         acciones.sleep(15)
         mensaje= f"loging.png"
         enviaremailmensaje(email,mensaje)     
@@ -79,8 +78,7 @@ def main():
             #time.sleep(15)
             #imagen= "abrirlista.png"
             #enviaremailreproduccion(email,imagen)            
-            #pyautogui.screenshot(os.path.join(pathImg,f"PlayList.png"))
-            
+            pyautogui.screenshot(os.path.join(pathImg,f"PlayList.png"))
             time.sleep(15)
             imagen= "PlayList.png"
             enviaremailreproduccion(email,imagen)
