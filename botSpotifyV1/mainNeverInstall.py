@@ -56,7 +56,8 @@ def main():
         #print("Primera captura enviada")   
         pyautogui.moveTo(1866, 1223)
         pyautogui.click()
-        valor= random.randint(1,3)
+        valor=1
+        #valor= random.randint(1,3)
         if valor == 1:  #reproducir lista
             print("INICIANDO REPRODUCCIÓN POR LISTA")  
             with open(os.path.join(pathImg,f"mensaje1.txt"), 'w') as f:
@@ -84,11 +85,11 @@ def main():
             #time.sleep(500)            
         
         elif valor==2: #reproducir directamente del album
-            print("INICIANDO REPRODUCCIÓN POR LISTA")  
+            print("INICIANDO REPRODUCCIÓN POR ALBUM")  
             acciones.reproducir2(email)
             
         elif valor ==3:
-            print("INICIANDO REPRODUCCIÓN POR LISTA")  
+            print("INICIANDO REPRODUCCIÓN POR LISTA DE AMIGO")  
             acciones.reproducir3(email)
 
         
