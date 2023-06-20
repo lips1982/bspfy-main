@@ -25,9 +25,9 @@ def main():
     display.start()
 
     #--> Descomentar para ver en PC
-    pyautogui._pyautogui_x11._display = Xlib.display.Display(":5")
+    #pyautogui._pyautogui_x11._display = Xlib.display.Display(":5")
 
-    #pyautogui._pyautogui_x11._display = Xlib.display.Display(os.environ['DISPLAY'])
+    pyautogui._pyautogui_x11._display = Xlib.display.Display(os.environ['DISPLAY'])
     time.sleep(10)
     email="GMAILS"
     passw="PASW"
@@ -39,7 +39,6 @@ def main():
             driver = BaseConexion().conexionChrome()
             print ("Driver iniciado")
             acciones = Acciones(driver)
-            time.sleep(15)
             acciones.ingresarSpotify()
             time.sleep(3)
             print ("Tomando capture")
@@ -51,15 +50,15 @@ def main():
         print("Linea 51")
         print("Primera captura iniciando")
         acciones.sleep(10)
-        pyautogui.screenshot(os.path.join(pathImg,f"loging.png"))      
-        acciones.sleep(15)
-        mensaje= f"loging.png"
-        enviaremailmensaje(email,mensaje)     
-        print("Primera captura enviada")   
+        #pyautogui.screenshot(os.path.join(pathImg,f"loging.png"))      
+        #mensaje= f"loging.png"
+        #enviaremailmensaje(email,mensaje)     
+        #print("Primera captura enviada")   
         pyautogui.moveTo(1866, 1223)
         pyautogui.click()
         valor= random.randint(1,3)
         if valor == 1:  #reproducir lista
+            print("INICIANDO REPRODUCCIÓN POR LISTA")  
             with open(os.path.join(pathImg,f"mensaje1.txt"), 'w') as f:
                 f.write("Reproduciendo la lista ") 
             mensaje= "mensaje1.txt"
@@ -78,18 +77,18 @@ def main():
             #time.sleep(15)
             #imagen= "abrirlista.png"
             #enviaremailreproduccion(email,imagen)            
-            pyautogui.screenshot(os.path.join(pathImg,f"PlayList.png"))
-            time.sleep(15)
-            imagen= "PlayList.png"
-            enviaremailreproduccion(email,imagen)
-            time.sleep(500)            
+            #pyautogui.screenshot(os.path.join(pathImg,f"PlayList.png"))
+            #time.sleep(15)
+            #imagen= "PlayList.png"
+            #enviaremailreproduccion(email,imagen)
+            #time.sleep(500)            
         
         elif valor==2: #reproducir directamente del album
-
+            print("INICIANDO REPRODUCCIÓN POR LISTA")  
             acciones.reproducir2(email)
             
         elif valor ==3:
-
+            print("INICIANDO REPRODUCCIÓN POR LISTA")  
             acciones.reproducir3(email)
 
         

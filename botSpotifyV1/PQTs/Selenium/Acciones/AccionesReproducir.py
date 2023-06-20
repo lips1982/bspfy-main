@@ -51,7 +51,7 @@ class Acciones(BaseAcciones):
                 try:
                     self.click(xpathbotonplay)
                     print("reproduciendo lista OK")
-                    time.sleep(2700)
+                    time.sleep(7200)
                 except Exception as e:
                     print (e)
                     pass
