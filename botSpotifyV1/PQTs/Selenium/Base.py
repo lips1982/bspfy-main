@@ -32,7 +32,7 @@ class BaseConexion():
         self.options.add_argument('--start-maximized')
         self.options.add_argument('--disable-dev-shm-usage')    
         self.options.add_argument('--disable-infobars')  
-        self.options.add_argument('--user-data-dir=./opt/data-dir')    
+        self.options.add_argument('--user-data-dir=opt/data-dir')    
         #self.options.add_argument('--user-data-dir=./data-dir')
         #self.options.add_argument("--incognito")   
         self.options.add_argument('--disable-gpu')
