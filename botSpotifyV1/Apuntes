@@ -32,7 +32,7 @@ google-chrome --user-data-dir=/home/lips/bspfy-main/data-dir
 xhost +
 
 #reproducir el display en la pantalla del PC
-sudo docker run -it --rm -v /tmp/.X11-unix:/tmp/.X11-unix --net=host -e DISPLAY=$DISPLAY display04
+sudo docker run -it --rm -v /tmp/.X11-unix:/tmp/.X11-unix --net=host -e DISPLAY=$DISPLAY display01
   #en main canbiar a
   display = Display(visible=True, size=(1200,768))
   display.start()
