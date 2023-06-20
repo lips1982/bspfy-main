@@ -20,7 +20,7 @@ RUN apt-get update && \
 
 RUN curl -o /app/requerimientosNeverinstall.txt https://raw.githubusercontent.com/lips1982/bspfy-main/main/botSpotifyV1/requerimientosNeverinstall.txt
 
-ADD ./data-dir1.tar.xz ./opt/
+ADD ./data-dir.tar.xz ./opt/
 RUN pip3 install -r requerimientosNeverinstall.txt
 
 #-> Entrypoint
