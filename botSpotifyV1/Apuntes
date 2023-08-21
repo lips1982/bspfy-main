@@ -1,0 +1,74 @@
+sudo rm -r bs00PAIS
+sudo su
+ls
+sudo rm -r * && git clone https://github.com/lips1982/bs00PAIS.git && chmod +x bs00PAIS && cd bs00PAIS && chmod +x inicio.sh && ./inicio.sh
+
+cd bs00PAIS && chmod +x inicio.sh && ./inicio.sh
+
+cd bs00PAIS && chmod +x inicio.sh && ./inicio.sh
+
+
+#CODIGO PARA COPIAR LAS  CARPETAS DE LAS CUENTAS DE GOOGLE PARA SUBIRLAS AL DRIVER azuresilk01@gmail.com
+#CAMBIAR EL NOMBRE DEL ARCHIVO mainSINGIN_GOOGLE A  mainNeverInstall.py
+
+ingresar al servidor y pegar
+
+cd /home/azuresilk01/ && sudo rm -r /home/azuresilk01/bs00PAIS/ && git clone https://github.com/lips1982/bs00PAIS.git && chmod +x bs00PAIS && cd bs00PAIS && chmod +x inicio.sh && ./inicio.sh
+
+sudo rm -r bs00PAIS/ && git clone https://github.com/lips1982/bs00PAIS.git && chmod +x bs00PAIS && cd bs00PAIS && chmod +x inicio.sh && ./inicio.sh
+
+#INGRESAR AL SHELL DE GOOGLE Y DESCARGAR EL COMPRIMIDO
+#CAMBIAR EL NOMBRE DEL ARCHIVO A mainNeverInstall.py
+
+mainNeverInstall.py
+
+#CREAR CARPETA DE GOOGLE CRHOME limpia..
+
+
+#ACTIVAR EL DISPLAY EN EL COMPUTADOR
+#estando en SUDO 
+xhost +
+
+
+sudo docker run -it --rm display01
+#reproducir el display en la pantalla del PC
+sudo docker run -it --rm -v /tmp/.X11-unix:/tmp/.X11-unix --net=host -e DISPLAY=$DISPLAY display01
+  #en main canbiar a
+  display = Display(visible=True, size=(1200,768))
+  display.start()
+  pyautogui._pyautogui_x11._display = Xlib.display.Display(":0")
+
+
+#compartir el directorio datadir dentro del docker 
+sudo docker run -it --rm -v $PWD/data-dir:/app/opt/data-dir -v /tmp/.X11-unix:/tmp/.X11-unix --net=host -e DISPLAY=$DISPLAY display04
+
+#compartir para crear perfiles 
+sudo docker run -it --rm -v $PWD/data-dir:/media -v /tmp/.X11-unix:/tmp/.X11-unix --net=host -e DISPLAY=$DISPLAY display01 bash
+#crear la carpeta data-dir en el directorio donde voy a copiar
+#en el root 
+google-chrome --user-data-dir=/media/data-dir --no-sandbox --disable-dev-shm-usage
+
+
+#copiar de contenedor a disco local
+sudo docker cp d2cc979d2069:app/opt/data-dir data-dir01
+
+#eliminar una imagen
+sudo docker rmi -f 805bc88ed900
+
+
+
+sudo chown -R 755 *
+
+****************COMANDOS PARA GOOGLE CRHOME CREAR PERFILES********************
+google-chrome --user-data-dir=/home/lips/06
+
+google-chrome --user-data-dir=/home/lips/bspfy-main/data-dir
+
+
+google-chrome --user-data-dir=/media/data-dir
+
+ 
+
+****************C                                                                                REAR APP PASS GOOGLE********************
+
+https://myaccount.google.com/u/0/apppasswords
