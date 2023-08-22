@@ -235,7 +235,7 @@ class Acciones(BaseAcciones):
         urlLista =random.choices(poollistas)
         
         
-        self.ir(urlLista)
+        self.ir(urlLista[0])
         time.sleep(10)
         pyautogui.moveTo(1065, 745)
         pyautogui.click(1065, 745)    
