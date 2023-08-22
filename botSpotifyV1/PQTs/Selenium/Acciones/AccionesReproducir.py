@@ -234,7 +234,7 @@ class Acciones(BaseAcciones):
 
         urlLista =random.choices(poollistas)
         
-        
+        print (f"REPRODUCIENDO LISTA {urlLista[0]}")
         self.ir(urlLista[0])
         time.sleep(10)
         pyautogui.moveTo(1065, 745)
