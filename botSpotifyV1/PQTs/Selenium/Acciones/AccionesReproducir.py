@@ -232,7 +232,7 @@ class Acciones(BaseAcciones):
 
     def reproducir3(self,email):
 
-        urlLista =random.choices(poollistas, k=1)
+        urlLista =random.choices(poollistas)
         
         
         self.ir(urlLista)
