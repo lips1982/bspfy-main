@@ -232,10 +232,10 @@ class Acciones(BaseAcciones):
 
     def reproducir3(self,email):
 
-        urlLista =random.choices(poollistas, k=4)
+        urlLista =random.choices(poollistas, k=1)
         
         
-        self.ir(urlLista[0][0])
+        self.ir(urlLista)
         time.sleep(10)
         pyautogui.moveTo(1065, 745)
         pyautogui.click(1065, 745)    
