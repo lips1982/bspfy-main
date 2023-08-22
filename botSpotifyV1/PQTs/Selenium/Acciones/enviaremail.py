@@ -123,6 +123,7 @@ def enviaremailreproduccion(email,adjunto):
 
 def enviaremailmensaje(email,adjunto):
     emailsender=random.choice(sendermail)
+    print(emailsender)
     corre, contrase = emailsender    
     remitente = corre
     destinatarios = ['azuresilkmain@gmail.com']

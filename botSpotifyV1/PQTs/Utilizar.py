@@ -103,10 +103,11 @@ sendermail=[
 
 poollistas=[
 'https://open.spotify.com/playlist/47xS28nNGWztm9VlgtsSVz',
-'https://open.spotify.com/playlist/7MxJr8ToMDXfFBJm63Q6hh',
-'https://open.spotify.com/playlist/4kJPw6UyYOnu4M9NYRUhem',
-
-
+'https://open.spotify.com/playlist/63FTSgis4vnLdDjB9kX9TB',
+'',
+'',
+'',
+'',
 ]
 
 poolartista=[
