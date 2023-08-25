@@ -75,7 +75,6 @@ sendermail=[
 ('azuresilk04@gmail.com','odfgmiojuvhtwgol'),
 ('azuresilk05@gmail.com','oseacfndnizbwwgh'),
 ('azuresilk06@gmail.com','zyycnjdqgsggknps'),
-('azuresilk07@gmail.com','ihwsyblwmyiyklfy'),
 ('azuresilk08@gmail.com','ifvinsxzdtknghod'),
 ('azuresilk09@gmail.com','inggvvbdwdafjvwq'),
 ('azuresilk10@gmail.com','yztitmzyznxyrhvf'),
@@ -100,10 +99,16 @@ sendermail=[
 ('azuresilk29@gmail.com','wveqpeepibgqhfzu'),
 ('azuresilk30@gmail.com','fnhupcvebyfxtroz')]
 
+#('azuresilk07@gmail.com','ihwsyblwmyiyklfy'),
 
 poollistas=[
 'https://open.spotify.com/playlist/47xS28nNGWztm9VlgtsSVz',
-'https://open.spotify.com/playlist/63FTSgis4vnLdDjB9kX9TB']
+'https://open.spotify.com/playlist/63FTSgis4vnLdDjB9kX9TB',
+'https://open.spotify.com/playlist/7MxJr8ToMDXfFBJm63Q6hh',
+'https://open.spotify.com/playlist/4kJPw6UyYOnu4M9NYRUhem',
+'https://open.spotify.com/playlist/4OQEqV4X4eCEQNOlonNfWW']
+
+
 
 poolartista=[
 ['https://open.spotify.com/artist/12IdoG9MNfNxyvghHLIipu',1320],

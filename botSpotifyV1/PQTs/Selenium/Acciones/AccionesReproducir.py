@@ -21,6 +21,7 @@ from PQTs.Selenium.Acciones.enviaremail import enviaremailreproduccion
 
 
 class Acciones(BaseAcciones):
+    
     def ingresarSpotify(self):
         try:
             self.maximizar()
@@ -93,20 +94,12 @@ class Acciones(BaseAcciones):
         else:
             time.sleep(1500)
 
-
-
     def reproducir2(self,email):
+
         albumartista =random.choices(poolartista, k=4)
         self.ir(albumartista[0][0])
-        time.sleep(10)
-        pyautogui.moveTo(1065, 745)
-        pyautogui.click(1065, 745)    
-        time.sleep(2)
-        pyautogui.moveTo(100, 700)
-        pyautogui.moveTo(100, 700)
-        pyautogui.click(100,700)    
-        pyautogui.click(100,700)       
-
+        time.sleep(3)
+        self.refreshweb()
         time.sleep(4)                      
         xpathfollow=(By.XPATH,"//button[@class='idI9vydtCzXVhU1BaKLw']")
         xpathplay= (By.XPATH,"//button[@data-testid='play-button'and @class='Button-sc-qlcn5g-0 DjJKP']")
@@ -118,6 +111,7 @@ class Acciones(BaseAcciones):
                 print("Seguidor nuevo ok")
         except:
                 print("Ya es seguidor")            
+
         play = self.explicitWaitElementoVisibility(15,xpathplay)
         if play:
             self.click(xpathplay)
@@ -127,20 +121,13 @@ class Acciones(BaseAcciones):
             self.reproducir2(email)
 
         time.sleep(albumartista[0][1])
-        
-        print("INICIA ARTISTA 2") 
+        print("FINALIZA REPRODUCIR ARTISTA 1") 
+
         
         self.ir(albumartista[1][0])
-        time.sleep(10)
-        pyautogui.moveTo(1065, 745)
-        pyautogui.click(1065, 745)    
-        time.sleep(2)
-        pyautogui.moveTo(100, 700)
-        pyautogui.moveTo(100, 700)
-        pyautogui.click(100,700)    
-        pyautogui.click(100,700)       
-
-        time.sleep(4)                      
+        time.sleep(3)
+        self.refreshweb()
+        time.sleep(4)                        
         xpathfollow=(By.XPATH,"//button[@class='idI9vydtCzXVhU1BaKLw']")
         xpathplay= (By.XPATH,"//button[@data-testid='play-button'and @class='Button-sc-qlcn5g-0 DjJKP']")
 
@@ -160,18 +147,13 @@ class Acciones(BaseAcciones):
             self.reproducir2(email)
 
         time.sleep(albumartista[1][1])
-
+        print("FINALIZA REPRODUCIR ARTISTA 2") 
+        
         self.ir(albumartista[2][0])
-        time.sleep(10)
-        pyautogui.moveTo(1065, 745)
-        pyautogui.click(1065, 745)    
-        time.sleep(2)
-        pyautogui.moveTo(100, 700)
-        pyautogui.moveTo(100, 700)
-        pyautogui.click(100,700)    
-        pyautogui.click(100,700)       
-
-        time.sleep(4)                      
+        time.sleep(3)
+        self.refreshweb()
+        time.sleep(4)  
+                    
         xpathfollow=(By.XPATH,"//button[@class='idI9vydtCzXVhU1BaKLw']")
         xpathplay= (By.XPATH,"//button[@data-testid='play-button'and @class='Button-sc-qlcn5g-0 DjJKP']")
 
@@ -191,17 +173,12 @@ class Acciones(BaseAcciones):
             self.reproducir2(email)
 
         time.sleep(albumartista[2][1])
+        print("FINALIZA REPRODUCIR ARTISTA 3") 
+
 
         self.ir(albumartista[3][0])
-        time.sleep(10)
-        pyautogui.moveTo(1065, 745)
-        pyautogui.click(1065, 745)    
-        time.sleep(2)
-        pyautogui.moveTo(100, 700)
-        pyautogui.moveTo(100, 700)
-        pyautogui.click(100,700)    
-        pyautogui.click(100,700)       
-
+        time.sleep(3)
+        self.refreshweb()
         time.sleep(4)                      
         xpathfollow=(By.XPATH,"//button[@class='idI9vydtCzXVhU1BaKLw']")
         xpathplay= (By.XPATH,"//button[@data-testid='play-button'and @class='Button-sc-qlcn5g-0 DjJKP']")
@@ -222,7 +199,7 @@ class Acciones(BaseAcciones):
             self.reproducir2(email)
 
         time.sleep(albumartista[3][1])
-
+        print("FINALIZA REPRODUCIR ARTISTA 4") 
 
         pyautogui.screenshot(os.path.join(pathImg,f"PlayAlbum.png"))
         time.sleep(10)
@@ -235,16 +212,12 @@ class Acciones(BaseAcciones):
         urlLista =random.choices(poollistas)
         
         print (f"REPRODUCIENDO LISTA {urlLista[0]}")
+
         self.ir(urlLista[0])
-        time.sleep(10)
-        pyautogui.moveTo(1065, 745)
-        pyautogui.click(1065, 745)    
-        time.sleep(2)
-        pyautogui.moveTo(100, 700)
-        pyautogui.moveTo(100, 700)
-        pyautogui.click(100,700)    
-        pyautogui.click(100,700)    
-                            
+        time.sleep(3)
+        self.refreshweb()
+        time.sleep(4)  
+
         xpathplay= (By.XPATH,"//button[@data-testid = 'play-button' and @class = 'Button-sc-qlcn5g-0 DjJKP']")
      
         play = self.explicitWaitElementoVisibility(15,xpathplay)
@@ -253,12 +226,14 @@ class Acciones(BaseAcciones):
         else:
             print("no se pudo dar play")   
             self.reproducir3(email)
-        time.sleep(1500)
+        time.sleep(6000)
+        
         pyautogui.screenshot(os.path.join(pathImg,f"FriendPlayList.png"))
         time.sleep(15)
         imagen= "FriendPlayList.png"
         enviaremailreproduccion(email,imagen)
-        time.sleep(500)
+        print("REPRODUCCIÓN DE LISTA FINALIZADA")  
+        time.sleep(3)
 
 
     def enviardatos(self,email):
